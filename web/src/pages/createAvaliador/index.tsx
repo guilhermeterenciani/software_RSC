@@ -6,31 +6,42 @@ import './style.css';
 
 const CreatAvaliador = () => {
     
+    const [formData, setFormData] = useState({
+        avaliador: '',
+        
+    })
     
     
+
+    function handleInputChange(event: ChangeEvent<HTMLInputElement>){
+        const dadosAvaliadores = event.target.value
+        
+        const avaliador = dadosAvaliadores.split('    ')
+        
+        console.log(
+            avaliador   //.map(avaliador => String(avaliador.trim()))
+        )
+        //setFormData({...formData, [name]: value})
+    }
+
     return(
         <div id="page-create-avaliador">
             <header>
 
             </header>
+            <div className="box-form">
+                <div className="img">
 
-            <form>
-                <h1>Cadastro de <br/> avaliador</h1>
+                </div>
+               <form>
+                    <h1>Cadastro de Avaliadores</h1>
 
-                <fieldset>
-                    <legend>
-                        <h2>Dados</h2>        
-                    </legend>
-                    <div className="field">
-
-                        <textarea name="" id="" /*onChange={handle}*/></textarea>
-                    </div>
-
-                </fieldset>
-                <button type="submit">
-                    Cadastrar Avalidor
-                </button>
-            </form>
+                    <label htmlFor="">Lista de avaliadores:</label>
+                    <input type="text" name="avaliadores" onChange={handleInputChange}/>
+                    
+                </form>
+            </div>
+            
         </div>
     );
 }
