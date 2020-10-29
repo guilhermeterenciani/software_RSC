@@ -4,22 +4,44 @@ import api from '../../services/api';
 
 import './style.css';
 
+interface Avaliador{
+    nome: String,
+    Avaliador: String,
+    Avaliado: String,
+    SIAPE: String,
+    CPF: String,
+    Tipo_Avaliador: String,
+    Lotado: String,
+    Email: String,
+    Celular: String
+}
+
 const CreatAvaliador = () => {
     
     const [formData, setFormData] = useState({
+        nome: '',
         avaliador: '',
-        
+        avaliado: '',
+        siape: '',
+        cpf: '',
+        tipoAvaliador: '',
+        lotado: '',
+        email: '',
+        celular: ''
     })
     
     
 
-    function handleInputChange(event: ChangeEvent<HTMLInputElement>){
-        const dadosAvaliadores = event.target.value
+    function handleInputChange(event: ChangeEvent<HTMLTextAreaElement>){
+        const Avaliadores = event.target.value
         
-        const avaliador = dadosAvaliadores.split('    ')
-        
+        const avaliador = Avaliadores.split('\n');
+        const dadosAvaliador = avaliador.map(avaliadores => (avaliadores.split('    ')))
+
+        //setFormData(dadosAvaliador);
+
         console.log(
-            avaliador   //.map(avaliador => String(avaliador.trim()))
+            dadosAvaliador   //.map(avaliador => String(avaliador.trim()))
         )
         //setFormData({...formData, [name]: value})
     }
@@ -37,7 +59,7 @@ const CreatAvaliador = () => {
                     <h1>Cadastro de Avaliadores</h1>
 
                     <label htmlFor="">Lista de avaliadores:</label>
-                    <input type="text" name="avaliadores" onChange={handleInputChange}/>
+                    <textarea name="avaliador" id="" onChange={handleInputChange}></textarea>
                     
                 </form>
             </div>
