@@ -31,3 +31,4 @@ Link para baixar [node.js](https://nodejs.org/en/download/)
 
 ## Informações:
  1- npx serve para executar pacotes do Node
+ 2- Felipe lindo
