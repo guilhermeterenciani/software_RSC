@@ -1,6 +1,6 @@
 import {Response, Request} from 'express'
 import Knex from '../database/connection'
-class TeacherController {
+class AvaliadorController {
     
     async create(request: Request, response: Response){
             const {
@@ -15,7 +15,7 @@ class TeacherController {
                 celular
             } = request.body;
 
-            const teacher = {
+            const Avaliador = {
                 nome,
                 avaliador,
                 avaliado,
@@ -27,28 +27,28 @@ class TeacherController {
                 celular
             };
         
-            await Knex('avaliador').insert(teacher);
-        return response.json(teacher);
+            await Knex('avaliador').insert(Avaliador);
+        return response.json(Avaliador);
     }
 
     async index(request: Request, response: Response){
-        const professores = await Knex('avaliador').select('*');
+        const avaliadores = await Knex('avaliador').select('*');
 
-        const serializedProfessor = professores.map(professor =>{
+        const serializedAvaliador = avaliadores.map(avaliadores =>{
             return{
-                nome: professor.nome,
-                avaliador: professor.avaliador,
-                avaliado: professor.avaliado,
-                siape: professor.siape,
-                cpf: professor.cpf,
-                tipoAvaliador: professor.tipoAvaliador,
-                lotado: professor.lotado,
-                email: professor.email,
-                celular: professor.celular
+                nome: avaliadores.nome,
+                avaliador: avaliadores.avaliador,
+                avaliado: avaliadores.avaliado,
+                siape: avaliadores.siape,
+                cpf: avaliadores.cpf,
+                tipoAvaliador: avaliadores.tipoAvaliador,
+                lotado: avaliadores.lotado,
+                email: avaliadores.email,
+                celular: avaliadores.celular
             }
         });
-        response.json(serializedProfessor);
+        response.json(serializedAvaliador);
     }
 }
 
-export default TeacherController;
+export default AvaliadorController;
