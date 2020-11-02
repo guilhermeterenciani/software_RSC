@@ -18,6 +18,7 @@ Link para baixar [node.js](https://nodejs.org/en/download/)
 ## Rodar o server
 ```bash
     cd Server
+    npm install
     npm run dev
 ```
 
@@ -27,6 +28,13 @@ Link para baixar [node.js](https://nodejs.org/en/download/)
 ```bash
     cd Server
     npm run knex:migrate
+```
+
+## Instalar frontend
+```bash
+    cd web
+    npm install
+    npm start
 ```
 
 ## Informações:
