@@ -6,44 +6,51 @@ import './style.css';
 
 interface Avaliador{
     nome: String,
-    Avaliador: String,
-    Avaliado: String,
-    SIAPE: String,
-    CPF: String,
-    Tipo_Avaliador: String,
-    Lotado: String,
-    Email: String,
-    Celular: String
+    avaliador: String,
+    avaliado: String,
+    siape: String,
+    cpf: String,
+    tipoAvaliador: String,
+    lotado: String,
+    email: String,
+    celular: String
 }
 
 const CreatAvaliador = () => {
     
-    const [formData, setFormData] = useState({
-        nome: '',
-        avaliador: '',
-        avaliado: '',
-        siape: '',
-        cpf: '',
-        tipoAvaliador: '',
-        lotado: '',
-        email: '',
-        celular: ''
-    })
+    const [avaliadores, setAvaliadores] = useState<Avaliador[]>([]);
     
-    
-
-    function handleInputChange(event: ChangeEvent<HTMLTextAreaElement>){
+    async function handleInputChange(event: ChangeEvent<HTMLTextAreaElement>){
         const Avaliadores = event.target.value
         
         const avaliador = Avaliadores.split('\n');
-        const dadosAvaliador = avaliador.map(avaliadores => (avaliadores.split('    ')))
 
-        //setFormData(dadosAvaliador);
+        const objectAvaliador = avaliador.map(function(stringAvaliador,index){
+            const splitAvaliadores = stringAvaliador.split('	');
+            //console.log(splitAvaliadores)
+            const data  ={
+                "nome": splitAvaliadores[1],
+                "avaliador": splitAvaliadores[2],
+                "avaliado": splitAvaliadores[3],
+                "siape": splitAvaliadores[4],
+                "cpf": splitAvaliadores[5],
+                "tipoAvaliador": splitAvaliadores[6],
+                "lotado": splitAvaliadores[7],
+                "email": splitAvaliadores[8],
+                "celular": splitAvaliadores[9]
+            };
+            return data;
+        });
+        if(objectAvaliador.length>0){
+             setAvaliadores([...avaliadores,...objectAvaliador]);
+        }
+    }
 
-        console.log(
-            dadosAvaliador   //.map(avaliador => String(avaliador.trim()))
-        )
-        //setFormData({...formData, [name]: value})
+    async function handleSubmit(event: FormEvent){
+        event.preventDefault();
+        //avaliadores.map(av=> console.log(av));
+        avaliadores.map(av=> api.post("avaliador",av));
+        alert("Avaliadores cadastrados com sucesso");
     }
 
     return(
@@ -55,11 +62,12 @@ const CreatAvaliador = () => {
                 <div className="img">
 
                 </div>
-               <form>
+               <form onSubmit={handleSubmit}>
                     <h1>Cadastro de Avaliadores</h1>
 
                     <label htmlFor="">Lista de avaliadores:</label>
                     <textarea name="avaliador" id="" onChange={handleInputChange}></textarea>
+                    <button type="submit">Cadastrar Avaliadores</button>
                     
                 </form>
             </div>

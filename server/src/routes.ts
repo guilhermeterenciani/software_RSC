@@ -11,7 +11,7 @@ const teacherController = new AvaliadorController();
 const cadastroController = new CadastroController();
 const professorController = new ProfessorController();
 
-routs.post('/create-avaliador', teacherController.create)
+routs.post('/avaliador', teacherController.create)
 routs.get('/avaliador', teacherController.index)   
 
 routs.post('/cadastro', cadastroController.create)
