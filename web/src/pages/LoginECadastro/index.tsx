@@ -1,26 +1,13 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './styles.css';
 import log from '../../assets/log.svg';
 import register from '../../assets/register.svg';
 
 
 const LoginECadastro = () => {
-    
-    let sign_in_btn = "container";
 
-    function mover(){
-        const mudar = "container sign-up-mode";
-        const voltar = "container"
-        // const sign_up_btn = "#sign-up-btn";
-        // const container = ".container";
+    const [alterar, setCounter] = useState("container");
 
-        // sign_up_btn.addEventListener("click", () => {
-        //     container.classList.add("sign-up-mode");
-        // });
-        
-        // sign_in_btn.addEventListener("click", () => {
-        //     container.classList.remove("sign-up-mode");
-    }
 
     return(
     
@@ -28,7 +15,7 @@ const LoginECadastro = () => {
             
     
             <div>
-                <div className="container" >
+                <div className={alterar} >
                    
                     <div className="forms-container">
                         <div className="signin-signup">
@@ -138,7 +125,7 @@ const LoginECadastro = () => {
                                 <br/>
                                 <br/>
                                 
-                                <button className="btn transparent" id="sign-up-btn" onClick={mover}>
+                                <button className="btn transparent" id="sign-up-btn" onClick={() => setCounter("container sign-up-mode")} >
                                 Cadastrar-se
                                 </button>
                             </div>
@@ -153,7 +140,7 @@ const LoginECadastro = () => {
             
                                 <br/>
                                 
-                                <button className="btn transparent" id="sign-in-btn">
+                                <button className="btn transparent" id="sign-in-btn" onClick={() => setCounter("container")} >
                                 Entrar
                                 </button>
                             </div>
