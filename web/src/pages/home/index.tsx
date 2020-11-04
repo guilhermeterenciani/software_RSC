@@ -20,6 +20,13 @@ const CreatePoint = () => {
             </strong>
             </Link>
 
+
+            <Link to="/login-cadastro">
+                       
+                <strong>
+                 Entra ai filhao
+                </strong>
+            </Link>
         </div>
         
     );
