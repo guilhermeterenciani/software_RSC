@@ -13,6 +13,13 @@ const CreatePoint = () => {
             Login
             </strong>
             </Link>
+
+            <Link to="/create-professor">           
+            <strong>
+            Cadastrar
+            </strong>
+            </Link>
+
         </div>
         
     );
