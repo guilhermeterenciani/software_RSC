@@ -13,13 +13,14 @@ const CreatePoint = () => {
             Login
             </strong>
             </Link>
+            <br/><br/>
 
             <Link to="/create-professor">           
             <strong>
             Cadastrar
             </strong>
             </Link>
-
+            <br/><br/>
 
             <Link to="/login-cadastro">
                        
