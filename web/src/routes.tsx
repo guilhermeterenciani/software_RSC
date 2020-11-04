@@ -1,7 +1,6 @@
 import React from 'react';
 import {Route, BrowserRouter} from 'react-router-dom';
 
-import Home from './pages/home';
 import CreateAvaliador from './pages/createAvaliador';
 import LoginECadastro from './pages/LoginECadastro';
 import CreateProfessor from './pages/createProfessor';
@@ -9,9 +8,8 @@ import CreateProfessor from './pages/createProfessor';
 const Routes = () => {
     return(
         <BrowserRouter>
-            <Route component={Home} path="/" exact/>
             <Route component={CreateAvaliador} path="/create-avaliador"/>
-            <Route component={LoginECadastro} path="/login-cadastro" />
+            <Route component={LoginECadastro} path="/" />
             <Route component={CreateProfessor} path="/create-professor" />
         </BrowserRouter>
     )
