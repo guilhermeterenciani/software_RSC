@@ -11,6 +11,10 @@ input {
   font-family: "Poppins", sans-serif;
 }
 
+h3{
+  font-family: sans-serif;
+}
+
 .container {
   position: relative;
   width: 100%;
@@ -219,11 +223,11 @@ form.sign-in-form {
 .btn.transparent {
   margin: 0;
   background: none;
-  border: 2px solid #fff;
-  width: 140px;
-  height: 51px;
+  border: 3.5px solid #fff;
+  width: 159px;
+  height: 63px;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .right-panel .image,

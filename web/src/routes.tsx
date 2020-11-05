@@ -9,8 +9,13 @@ const Routes = () => {
     return(
         <BrowserRouter>
             <Route component={CreateAvaliador} path="/create-avaliador"/>
+<<<<<<< HEAD
             <Route component={LoginECadastro} path="/" />
             
+=======
+            <Route component={LoginECadastro} path="/" exect />
+            <Route component={CreateProfessor} path="/create-professor" />
+>>>>>>> dev
         </BrowserRouter>
     )
 }

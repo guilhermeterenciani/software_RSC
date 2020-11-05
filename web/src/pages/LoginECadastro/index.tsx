@@ -201,7 +201,7 @@ const LoginECadastro = () => {
                         
                         <div className="panel left-panel">
                             <div className="content">
-                                <h3>Não possui Cadastro?</h3>
+                                <h3><b>NÃO POSSUI CADASTRO?</b></h3>
                                 <p>
                                 Por Favor, faça seu cadastro utilizando informações pessoas validas
                                 </p>
@@ -220,7 +220,7 @@ const LoginECadastro = () => {
                         <div className="panel right-panel">
                             
                             <div className="content">
-                                <h3>Já possui cadastro?</h3>
+                                <h3>JÁ TENHO CADASTRO</h3>
             
                                 <br/>
                                 
