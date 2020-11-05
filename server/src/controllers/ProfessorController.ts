@@ -9,8 +9,6 @@ class ProfessorController {
                 senha,
                 siape,
                 cpf,
-                processorsc,
-                numprocesso,
                 celular
             } = request.body;
 
@@ -20,8 +18,6 @@ class ProfessorController {
                 senha,
                 siape,
                 cpf,
-                processorsc,
-                numprocesso,
                 celular
             };
         
@@ -39,8 +35,6 @@ class ProfessorController {
                 senha: umprofessor.senha,
                 siape: umprofessor.siape,
                 cpf: umprofessor.cpf,
-                processorsc: umprofessor.processorsc,
-                numprocesso: umprofessor.numprocesso,
                 celular: umprofessor.celular
             }
         });

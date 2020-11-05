@@ -8,10 +8,8 @@ export async function up(knex: Knex) {
         table.string('senha').notNullable();
         table.string('siape').notNullable();
         table.string('cpf').notNullable();
-        table.string('processorsc').notNullable();
-        table.string('numprocesso').notNullable();
         table.string('celular').notNullable();
-        
+
     });
 }
 
