@@ -1,22 +1,18 @@
 import express, {request, response} from'express';
 import Knex from './database/connection';
 
-import CadastroController from './controllers/CadastroController'
-import ProfessorController from './controllers/ProfessorController'
+import ProfessorController from './controllers/ProfessorController';
 import AvaliadorController from './controllers/AvaliadorController';
 
 const routs = express.Router();
 
-const teacherController = new AvaliadorController();
-const cadastroController = new CadastroController();
+const avaliadorController = new AvaliadorController();
 const professorController = new ProfessorController();
 
-routs.post('/avaliador', teacherController.create)
-routs.get('/avaliador', teacherController.index)   
+routs.post('/avaliador', avaliadorController.create)
+routs.get('/avaliador', avaliadorController.index)   
 
-routs.post('/cadastro', cadastroController.create)
-
-routs.post('/professores', professorController.create)
-routs.get('/listprofessor', professorController.index)  
+routs.post('/professor', professorController.create)
+routs.get('/professor', professorController.index)  
 
 export default routs

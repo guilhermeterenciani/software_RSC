@@ -1,10 +1,50 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, ChangeEvent, FormEvent} from 'react';
 import './styles.css';
 import log from '../../assets/log.svg';
 import register from '../../assets/register.svg';
 
+import api from '../../services/api';
 
 const LoginECadastro = () => {
+
+    const [formData, setFormData] = useState({
+        email: '',
+        nome: '',
+        senha: '',
+        confirmarsenha: '',
+        siape: '',
+        cpf: '',
+        celular: ''
+    });
+
+    function handleInputChange(event: ChangeEvent<HTMLInputElement>){
+        const {name, value} = event.target;
+
+        setFormData({ ...formData, [name]: value });
+    }
+
+    async function handleSubmit(event: FormEvent) {
+
+        event.preventDefault(); 
+        if(formData.confirmarsenha == formData.senha){
+
+            const { email, nome, senha, siape, cpf, celular} = formData;
+
+            const data = {
+                email,
+                nome,
+                senha,
+                siape,
+                cpf,
+                celular 
+            };
+
+            console.log(data)
+            await api.post('professor', data);
+            alert("Professor cadastrado !");
+        }
+        else{ alert("As senhas não se conhecidem !")}
+    }
 
     const [alterar, setCounter] = useState("container");
 
@@ -57,33 +97,77 @@ const LoginECadastro = () => {
                         
                         </form>
           
-                        <form action="#" className="sign-up-form">
+                        <form action="#" className="sign-up-form" onSubmit={handleSubmit}>
                             <h2 className="title">Informações Pessoais</h2>
 
                             <div className="input-field">
                                 <i className="fas fa-user"></i>
-                                <input type="text" placeholder="Nome" />
+
+                                <input type="text" 
+                                placeholder="Nome" 
+                                name="nome"
+                                id="nome"
+                                onChange={handleInputChange}/>
                             </div>
 
                             <div className="input-field">
                                 <i className="fas fa-user"></i>
-                                <input type="text" placeholder="CPF" />
+
+                                <input type="number" 
+                                placeholder="CPF" 
+                                name="cpf"
+                                id="cpf"
+                                onChange={handleInputChange}/>
                             </div>
 
                             <div className="input-field">
                                 <i className="fas fa-envelope"></i>
-                                <input type="email" placeholder="E-mail" />
+
+                                <input type="email" 
+                                placeholder="E-mail" 
+                                name="email"
+                                id="email"
+                                onChange={handleInputChange}/>
                             </div>
 
                             <div className="input-field">
                                 <i className="fas fa-envelope"></i>
-                                <input type="number" placeholder="SIAPE" />
-                            </div>
 
+                                <input type="number" 
+                                placeholder="SIAPE" 
+                                name="siape"
+                                id="siape"
+                                onChange={handleInputChange}/>
+                            </div>
 
                             <div className="input-field">
                                 <i className="fas fa-lock"></i>
-                                <input type="password" placeholder="Senha" />
+
+                                <input type="password" 
+                                placeholder="Senha" 
+                                name="senha"
+                                id="senha"
+                                onChange={handleInputChange}/>
+                            </div>
+
+                            <div className="input-field">
+                                <i className="fas fa-lock"></i>
+
+                                <input type="password" 
+                                placeholder="Confirmar senha" 
+                                name="confirmarsenha" 
+                                id= "confirmarsenha"
+                                onChange={handleInputChange}/>
+                            </div>
+
+                            <div className="input-field">
+                                <i className="fas fa-lock"></i>
+
+                                <input type="number" 
+                                placeholder="Celular" 
+                                name="celular" 
+                                id= "celular"
+                                onChange={handleInputChange}/>
                             </div>
 
                             <input type="submit" className="btn" value="Cadastrar" />
