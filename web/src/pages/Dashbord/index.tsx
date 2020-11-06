@@ -5,7 +5,7 @@ const Dashdord = () =>{
     return(
 
     <div>
-               <!--===== HEADER =====-->
+              {/* Pagina  */}
         <header className="l-header">
             <nav className="nav bd-grid">
                 <div>
@@ -17,8 +17,6 @@ const Dashdord = () =>{
                         <li className="nav__item"><a href="#home" className="nav__link active">Menu</a></li>
                         <li className="nav__item"><a href="#skills" className="nav__link">Meus processos</a></li>
                         <li className="nav__item"><a href="#about" className="nav__link">Perfil</a></li>
-                        
-                        <!--<li className="nav__item"><a href="#work" className="nav__link">Processos</a></li>-->
                         <li className="nav__item"><a href="#contact" className="nav__link">Cadastro RSC</a></li>
                     </ul>
                 </div>
@@ -30,10 +28,10 @@ const Dashdord = () =>{
         </header>
 
         <div className="l-main">
-            <!--===== Pagina HOME =====-->
+            {/* <!--===== Pagina HOME =====--> */}
             <section className="home bd-grid" id="home">
                 <div className="home__data">
-                    <h1 className="home__title">Seja bem-vindo<br>Professor <br><span className="home__title-color">Felipe Florentin</span><br>
+                    <h1 className="home__title">Seja bem-vindo<br/>Professor <br/><span className="home__title-color">Felipe Florentin</span><br/></h1>
 
                     <a href="#" className="button">Sair</a> 
                 </div>
@@ -45,12 +43,12 @@ const Dashdord = () =>{
                 </div>
 
                 <div className="home__img">    
-                    <img src="assets/img/perfil.svg" alt="">
+                    <img src="assets/img/perfil.svg" alt=""/>
                 </div>
             </section>
 
 
-            <!--===== Processos =====-->
+            {/* <!--===== Processos =====--> */}
             <section className="Processos section" id="skills">
                 <h2 className="section-title">Meu processos</h2>
 
@@ -59,7 +57,7 @@ const Dashdord = () =>{
                         <h2 className="Processos__subtitle">Processos pendentes</h2>
                         <p className="Processos__text">Esses são os processos que o senhor ficou de avaliar:</p>
 
-                        <input type="button" value="Ver" className="contact__button button">
+                        <input type="button" value="Ver" className="contact__button button"/>
                         <div className="Processos__data">
                             <div className="Processos__names">
                                 <i className='bx bxs-folder-open Processos__icon'></i>
@@ -73,7 +71,7 @@ const Dashdord = () =>{
                             </div>
                         </div>
 
-                        <input type="button" value="Ver" className="contact__button button">
+                        <input type="button" value="Ver" className="contact__button button"/>
                         <div className="Processos__data">
                             <div className="Processos__names">
                                 <i className='bx bxs-folder-open Processos__icon'></i>
@@ -87,7 +85,7 @@ const Dashdord = () =>{
                             </div>
                         </div>
 
-                        <input type="button" value="Ver" className="contact__button button">
+                        <input type="button" value="Ver" className="contact__button button"/>
                         <div className="Processos__data">
                             <div className="Processos__names">
                                 <i className='bx bxs-folder-open Processos__icon'></i>
@@ -101,7 +99,7 @@ const Dashdord = () =>{
                             </div>
                         </div>
 
-                        <input type="button" value="Ver" className="contact__button button">
+                        <input type="button" value="Ver" className="contact__button button"/>
                         <div className="Processos__data">
                             <div className="Processos__names">
                                 <i className='bx bxs-folder-open Processos__icon'></i>
@@ -115,7 +113,7 @@ const Dashdord = () =>{
                             </div>
                         </div>
 
-                        <input type="button" value="Ver" className="contact__button button">
+                        <input type="button" value="Ver" className="contact__button button"/>
                         <div className="Processos__data">
                             <div className="Processos__names">
                                 <i className='bx bxs-folder-open Processos__icon'></i>
@@ -131,7 +129,7 @@ const Dashdord = () =>{
 
 
 
-                         <input type="button" value="Ver" className="contact__button button">
+                         <input type="button" value="Ver" className="contact__button button"/>
                         <div className="Processos__data">
                             <div className="Processos__names">
                                 <i className='bx bxs-folder-open Processos__icon'></i>
@@ -149,27 +147,27 @@ const Dashdord = () =>{
                 </div>
             </section>
 
-            <!--===== Sobre o Perfil =====-->
+            {/* <!--===== Sobre o Perfil =====--> */}
             <section className="about section " id="about">
                 <h2 className="section-title">Meu perfil</h2>
 
                 <div className="about__container bd-grid">
                     <div className="about__img">
-                        <img src="assets/img/about.svg" alt="">
+                        <img src="assets/img/about.svg" alt=""/>
                     </div>
                     
                     <div>
-                        <h2 className="about__subtitle">Nome:</h2> Felipe Florentin</h3><br>
-                        <h2 className="about__subtitle">Data de nascimento:</h2> 12/02/2002</h3><br>
-                        <h2 className="about__subtitle">E-mail:</h2> Felipe.troiar@gmail.com</h3><br>
-                        <h2 className="about__subtitle">Endereço:</h2> Rua do abacaxi numero 68</h3><br>
-                        <h2 className="about__subtitle">Delefone:</h2>(67)40028922</h3><br>
+                        <h2 className="about__subtitle">Nome:</h2><h3> Felipe Florentin</h3><br/>
+                        <h2 className="about__subtitle">Data de nascimento:</h2><h3> 12/02/2002</h3><br/>
+                        <h2 className="about__subtitle">E-mail:</h2><h3> Felipe.troiar@gmail.com</h3><br/>
+                        <h2 className="about__subtitle">Endereço:</h2><h3> Rua do abacaxi numero 68</h3><br/>
+                        <h2 className="about__subtitle">Delefone:</h2><h3>(67)40028922</h3><br/>
                         
                         <h2 className="about__subtitle">Descrição</h2> 
-                        <p ">Eu sou um aluno do IFMS que neste momento está fazendo um projeto com o professor guilherme e amigos, o mesmo que tem como
+                        <p >Eu sou um aluno do IFMS que neste momento está fazendo um projeto com o professor guilherme e amigos, o mesmo que tem como
                             objetivo o facilitamento da inserção de dados em um sistema.
-                        </p><br>
-                        <input type="button" value="Alterar perfil" className="contact__button button">            
+                        </p><br/>
+                        <input type="button" value="Alterar perfil" className="contact__button button"/>            
                     </div>   
                                                  
                 </div>
@@ -177,7 +175,7 @@ const Dashdord = () =>{
         </div>
         
 
-        <!--===== FOOTER =====-->
+        {/* <!--===== FOOTER =====--> */}
         <footer className="footer">
             <p className="footer__title">Projeto TCC/Estágio </p>
             <div className="footer__social">
@@ -189,15 +187,15 @@ const Dashdord = () =>{
         </footer>
 
 
-        <!--===== SCROLL REVEAL =====-->
+        {/* <!--===== SCROLL REVEAL =====--> */}
         <script src="https://unpkg.com/scrollreveal"></script>
 
-        <!--===== MAIN JS =====-->
+        {/* <!--===== MAIN JS =====--> */}
         <script src="assets/js/main.js"></script>
 
 
 
     </div>
-    )
+    );
 }
 export default Dashdord;
