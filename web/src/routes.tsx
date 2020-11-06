@@ -9,17 +9,9 @@ const Routes = () => {
     return(
         <BrowserRouter>
             <Route component={CreateAvaliador} path="/create-avaliador"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-            <Route component={LoginECadastro} path="/" />
-            
-=======
-            <Route component={LoginECadastro} path="/" exect />
-=======
+
             <Route component={LoginECadastro} path="/" exact />
->>>>>>> dev
-            <Route component={CreateProfessor} path="/create-professor" />
->>>>>>> dev
+
         </BrowserRouter>
     )
 }
