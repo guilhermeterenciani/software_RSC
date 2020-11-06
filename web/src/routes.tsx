@@ -3,6 +3,7 @@ import {Route, BrowserRouter} from 'react-router-dom';
 
 import CreateAvaliador from './pages/createAvaliador';
 import LoginECadastro from './pages/LoginECadastro';
+import Dashboard from './pages/Dashboard';
 //import CreateProfessor from './pages/createProfessor';
 
 const Routes = () => {
@@ -12,6 +13,7 @@ const Routes = () => {
 
             <Route component={LoginECadastro} path="/" exact />
 
+            <Route component={Dashboard} path="/dashboard"/>
         </BrowserRouter>
     )
 }

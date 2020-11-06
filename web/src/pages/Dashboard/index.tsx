@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-const Dashdord = () =>{
+const Dashboard = () =>{
     return(
 
     <div>
@@ -198,4 +198,4 @@ const Dashdord = () =>{
     </div>
     );
 }
-export default Dashdord;
+export default Dashboard;
