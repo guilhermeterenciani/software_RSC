@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Tela de Professor</title>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo"></a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active">Menu</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Meus processos</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">Perfil</a></li>
+                        
+                        <!--<li class="nav__item"><a href="#work" class="nav__link">Processos</a></li>-->
+                        <li class="nav__item"><a href="#contact" class="nav__link">Cadastro RSC</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== Pagina HOME =====-->
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">Seja bem-vindo<br>Professor <br><span class="home__title-color">Felipe Florentin</span><br>
+
+                    <a href="#" class="button">Sair</a> 
+                </div>
+
+                <div class="home__social">
+                    <a href="" class="home__social-icon"><i class='bx bxl-facebook'></i></a>
+                    <a href="" class="home__social-icon"><i class='bx bxl-instagram' ></i></a>
+                    <a href="" class="home__social-icon"><i class='bx bxl-twitter' ></i></a>
+                </div>
+
+                <div class="home__img">    
+                    <img src="assets/img/perfil.svg" alt="">
+                </div>
+            </section>
+
+
+            <!--===== Processos =====-->
+            <section class="Processos section" id="skills">
+                <h2 class="section-title">Meu processos</h2>
+
+                <div class="Processos__container bd-grid">          
+                    <div>
+                        <h2 class="Processos__subtitle">Processos pendentes</h2>
+                        <p class="Processos__text">Esses são os processos que o senhor ficou de avaliar:</p>
+
+                        <input type="button" value="Ver" class="contact__button button">
+                        <div class="Processos__data">
+                            <div class="Processos__names">
+                                <i class='bx bxs-folder-open Processos__icon'></i>
+                                <span class="Processos__name">Processo do Leandro</span>
+                            </div>
+                            <div class="Processos__bar Processos__html">
+
+                            </div>
+                            <div>
+                                <span class="Processos__percentage">95%</span>
+                            </div>
+                        </div>
+
+                        <input type="button" value="Ver" class="contact__button button">
+                        <div class="Processos__data">
+                            <div class="Processos__names">
+                                <i class='bx bxs-folder-open Processos__icon'></i>
+                                <span class="Processos__name">Processo do Guilherme</span>
+                            </div>
+                            <div class="Processos__bar Processos__css">
+                                
+                            </div>
+                            <div>
+                                <span class="Processos__percentage">85%</span>
+                            </div>
+                        </div>
+
+                        <input type="button" value="Ver" class="contact__button button">
+                        <div class="Processos__data">
+                            <div class="Processos__names">
+                                <i class='bx bxs-folder-open Processos__icon'></i>
+                                <span class="Processos__name">Processo da gaby</span>
+                            </div>
+                            <div class="Processos__bar Processos__js">
+                                
+                            </div>
+                            <div>
+                                <span class="Processos__percentage">65%</span>
+                            </div>
+                        </div>
+
+                        <input type="button" value="Ver" class="contact__button button">
+                        <div class="Processos__data">
+                            <div class="Processos__names">
+                                <i class='bx bxs-folder-open Processos__icon'></i>
+                                <span class="Processos__name">Processo do mateus</span>
+                            </div>
+                            <div class="Processos__bar Processos__js">
+                                
+                            </div>
+                            <div>
+                                <span class="Processos__percentage">78%</span>
+                            </div>
+                        </div>
+
+                        <input type="button" value="Ver" class="contact__button button">
+                        <div class="Processos__data">
+                            <div class="Processos__names">
+                                <i class='bx bxs-folder-open Processos__icon'></i>
+                                <span class="Processos__name">Processo da camila</span>
+                            </div>
+                            <div class="Processos__bar Processos__js">
+                                
+                            </div>
+                            <div>
+                                <span class="Processos__percentage">68%</span>
+                            </div>
+                        </div>
+
+
+
+                         <input type="button" value="Ver" class="contact__button button">
+                        <div class="Processos__data">
+                            <div class="Processos__names">
+                                <i class='bx bxs-folder-open Processos__icon'></i>
+                                <span class="Processos__name">Processo do gustavo</span>
+                            </div>
+                            <div class="Processos__bar Processos__ux">
+                                
+                            </div>
+                            <div>
+                                <span class="Processos__percentage">85%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+
+            <!--===== Sobre o Perfil =====-->
+            <section class="about section " id="about">
+                <h2 class="section-title">Meu perfil</h2>
+
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                        <img src="assets/img/about.svg" alt="">
+                    </div>
+                    
+                    <div>
+                        <h2 class="about__subtitle">Nome:</h2> Felipe Florentin</h3><br>
+                        <h2 class="about__subtitle">Data de nascimento:</h2> 12/02/2002</h3><br>
+                        <h2 class="about__subtitle">E-mail:</h2> Felipe.troiar@gmail.com</h3><br>
+                        <h2 class="about__subtitle">Endereço:</h2> Rua do abacaxi numero 68</h3><br>
+                        <h2 class="about__subtitle">Delefone:</h2>(67)40028922</h3><br>
+                        
+                        <h2 class="about__subtitle">Descrição</h2> 
+                        <p ">Eu sou um aluno do IFMS que neste momento está fazendo um projeto com o professor guilherme e amigos, o mesmo que tem como
+                            objetivo o facilitamento da inserção de dados em um sistema.
+                        </p><br>
+                        <input type="button" value="Alterar perfil" class="contact__button button">            
+                    </div>   
+                                                 
+                </div>
+            </section>
+
+        </main>
+
+        <!--===== FOOTER =====-->
+        <footer class="footer">
+            <p class="footer__title">Projeto TCC/Estágio </p>
+            <div class="footer__social">
+                <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+                <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+            </div>
+            <p>&#169;2020 Instituto Federal de Mato Grosso do Sul</p>
+        </footer>
+
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
