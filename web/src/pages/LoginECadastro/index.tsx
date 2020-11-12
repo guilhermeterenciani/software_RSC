@@ -4,6 +4,7 @@ import log from '../../assets/log.svg';
 import register from '../../assets/register.svg';
 
 import api from '../../services/api';
+import LoginService from '../../services/LoginService';
 
 const LoginECadastro = () => {
 
@@ -49,6 +50,35 @@ const LoginECadastro = () => {
     const [alterar, setCounter] = useState("container");
 
 
+
+
+    async function handleLogar (event: FormEvent) {
+
+        event.preventDefault(); 
+
+        const {senha, siape} = formData;
+
+        const dataLogin = {
+            senha,
+            siape
+            
+        };
+        //let data
+        let data = await LoginService.logar(dataLogin);
+        if(data.status){
+            throw new Error(data.message);
+        }
+        
+        if(!data.token){
+            throw new Error("Não foi possível realizar o login, tente mais tarde!");    
+        }
+
+        localStorage.setItem('user', JSON.stringify(data));
+        API.defaults.headers['x-access-token'] = data.token
+        return Promise.resolve();
+    }
+
+
     return(
     
     <div>
@@ -60,18 +90,18 @@ const LoginECadastro = () => {
                     <div className="forms-container">
                         <div className="signin-signup">
 
-                        <form action="#" className="sign-in-form">
+                        <form action="#" className="sign-in-form" onSubmit={handleLogar}>
 
                             <h2 className="title">Seja Bem-Vindo</h2>
 
                             <div className="input-field">
                                 <i className="fas fa-user"></i>
-                                <input type="text" placeholder="SIAPE" />
+                                <input type="text" placeholder="SIAPE" name="siape" onChange={handleInputChange}/>
                             </div>
 
                             <div className="input-field">
                                 <i className="fas fa-lock"></i>
-                                <input type="password" placeholder="Senha" />
+                                <input type="password" placeholder="Senha" name="senha" onChange={handleInputChange}/>
                             </div>
             
                             <input type="submit" value="Entrar" className="btn solid" />
