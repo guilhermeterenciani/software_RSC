@@ -1,5 +1,6 @@
-import api from './api'
-//import md5 from 'md5'
+import api from './api';
+// import md5 from 'md5';
+
 const md5 = require('md5')
 interface DataObject{
     siape: String,

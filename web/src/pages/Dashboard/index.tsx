@@ -1,5 +1,7 @@
 import React from 'react';
 import './style.css';
+import perfil from '../../assets/perfil.svg';
+import about from '../../assets/about.svg';
 
 const Dashboard = () =>{
     return(
@@ -43,7 +45,7 @@ const Dashboard = () =>{
                 </div>
 
                 <div className="home__img">    
-                    <img src="assets/img/perfil.svg" alt=""/>
+                    <img src={perfil} alt=""/>
                 </div>
             </section>
 
@@ -153,7 +155,7 @@ const Dashboard = () =>{
 
                 <div className="about__container bd-grid">
                     <div className="about__img">
-                        <img src="assets/img/about.svg" alt=""/>
+                        <img src={about} alt=""/>
                     </div>
                     
                     <div>
