@@ -40,6 +40,7 @@ class ProfessorController {
         });
         response.json(serializedUmProfessor);
     }
+
 }
 
 export default ProfessorController;
