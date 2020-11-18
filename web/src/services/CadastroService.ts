@@ -3,15 +3,20 @@ import api from './api';
 
 const md5 = require('md5')
 interface DataObject{
+    
+    email: String,
+    nome: String,
+    senha: String,
     siape: String,
-    senha: String
+    cpf: String,
+    celular : String,  
 }
 class CadastroService{
-    static async cadastrar({ senha, siape}:DataObject){
+    static async cadastrar({ email, nome ,senha, siape, cpf, celular}:DataObject){
         try{
             let criptSenha = md5(senha)
 
-            let resposta = await api.post('/cadastro',{siape,senha:criptSenha})
+            let resposta = await api.post('/cadastro',{email, nome ,senha, siape, cpf, celular:criptSenha})
             console.log(JSON.stringify(resposta));
             return resposta.data
         }catch(error){

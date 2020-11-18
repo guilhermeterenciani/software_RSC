@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "ts-node-dev --ignore-watch node-modules src/server.ts",
     "knex:seed": "knex --knexfile knexfile.ts seed:run",
-    "knex:migrate": "knex --knexfile knexfile.ts migrate:latest"
+    "knex:migrate": "knex --knexfile knexfile.ts migrate:latest",
+    "typeorm": "npx ts-node ./node_modules/typeorm/cli.js"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +17,9 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.6",
-    "sqlite3": "^5.0.0"
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^5.0.0",
+    "typeorm": "^0.2.29"
   },
   "devDependencies": {
     "@types/cors": "^2.8.8",

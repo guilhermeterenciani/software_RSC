@@ -39,7 +39,7 @@ const LoginECadastro = () => {
                 cpf,
                 celular 
             };
-
+            
             console.log(data)
             await api.post('professor', data);
             alert("Professor cadastrado !");
