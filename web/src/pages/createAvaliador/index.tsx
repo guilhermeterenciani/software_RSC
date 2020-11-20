@@ -29,15 +29,15 @@ const CreatAvaliador = () => {
             const splitAvaliadores = stringAvaliador.split('	');
             //console.log(splitAvaliadores)
             const data  ={
-                "nome": splitAvaliadores[1],
-                "avaliador": splitAvaliadores[2],
-                "avaliado": splitAvaliadores[3],
-                "siape": splitAvaliadores[4],
-                "cpf": splitAvaliadores[5],
-                "tipoAvaliador": splitAvaliadores[6],
-                "lotado": splitAvaliadores[7],
-                "email": splitAvaliadores[8],
-                "celular": splitAvaliadores[9]
+                "nome": splitAvaliadores[0],
+                "avaliador": splitAvaliadores[1],
+                "avaliado": splitAvaliadores[2],
+                "siape": splitAvaliadores[3],
+                "cpf": splitAvaliadores[4],
+                "tipoAvaliador": splitAvaliadores[5],
+                "lotado": splitAvaliadores[6],
+                "email": splitAvaliadores[7],
+                "celular": splitAvaliadores[8]
             };
             return data;
         });
@@ -48,9 +48,9 @@ const CreatAvaliador = () => {
 
     async function handleSubmit(event: FormEvent){
         event.preventDefault();
-        //avaliadores.map(av=> console.log(av));
+        avaliadores.map(av=> console.log(av));
         avaliadores.map(av=> api.post("avaliador",av));
-        alert("Avaliadores cadastrados com sucesso");
+        // alert("Avaliadores cadastrados com sucesso");
     }
 
     return(
@@ -58,20 +58,29 @@ const CreatAvaliador = () => {
             <header>
 
             </header>
-            <div className="box-form">
-                <div className="img">
 
-                </div>
-               <form onSubmit={handleSubmit}>
-                    <h1>Cadastro de Avaliadores</h1>
-
-                    <label htmlFor="">Lista de avaliadores:</label>
-                    <textarea name="avaliador" id="" onChange={handleInputChange}></textarea>
-                    <button type="submit">Cadastrar Avaliadores</button>
+            <img className="wave" src="../../assets/wave.png"/>
+	        <div className="container">
+		        <div className="img">
+			        <img src="img/bg.svg"/>
+		        </div>
+		        <div className="login-content">
+		
+                    <form onSubmit={handleSubmit}>
                     
-                </form>
-            </div>
-            
+                        <h2 className="title">Cadastrar Avaliador</h2>
+
+                        <div className="input-div one">
+                            <div className="i">
+                                <i className="fas fa-user"></i>
+                            </div>
+                            <textarea className= "textarea" rows={15} cols={30} onChange={handleInputChange}></textarea>
+                        </div>
+
+                        <input type="submit" className="btn" value="Cadrastar"/>
+                    </form>
+                </div>
+            </div>         
         </div>
     );
 }
