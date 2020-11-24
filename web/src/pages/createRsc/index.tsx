@@ -1,72 +1,74 @@
-import React, {useEffect, useState, ChangeEvent, FormEvent} from 'react';
-import './styles.css';
-import log from '../../assets/log.svg';
-import register from '../../assets/register.svg';
-
+import { useEffect, useState } from "react"
+import React, {ChangeEvent, FormEvent, Component} from 'react';
 import api from '../../services/api';
 
-const Rsc = () => {
+import './styles.css';
 
-    const [formData, setFormData] = useState({
-        numero_processo: '',
-        documento_rsc: '',
-        id_professor: ''
+interface Rsc{
+    numero_processo: String,
+    documento_rsc: String,
+    id_professor: String
+}
+
+const CreatRsc = () => {
+    
+    const [processo, setProcesso] = useState<Rsc[]>([]);
+    
+    async function handleInputChange(event: ChangeEvent<HTMLInputElement>){
+        const Processo = event.target.value
         
-    });
+        const rsc = Processo.split('\n');
 
-    function handleInputChange(event: ChangeEvent<HTMLInputElement>){
-        const {name, value} = event.target;
-
-        setFormData({ ...formData, [name]: value });
+        const objectRsc = rsc.map(function(stringRsc,index){
+            const splitProcesso = stringRsc.split('	');
+            //console.log(splitProcesso)
+            const data  ={
+                "numero_processo": splitProcesso[0],
+                "documento_rsc": splitProcesso[1],
+                "id_professor": splitProcesso[2]
+                };
+            return data;
+        });
+        if(objectRsc.length>0){
+             setProcesso([...processo,...objectRsc]);
+        }
     }
 
-    async function handleSubmit(event: FormEvent) {
-
-        const {numero_processo, documento_rsc, id_professor} = formData;
-
-            const data = {
-                numero_processo,
-                documento_rsc,
-                id_professor
-            };
-                 
-        
-
-            console.log(data)
-            await api.post('rsc', data);
-            alert("Processo cadastrado !");
-        }
-
-
-    const [alterar, setCounter] = useState("container");
-
-
+    async function handleSubmit(event: FormEvent){
+        event.preventDefault();
+        processo.map(av=> console.log(av));
+        processo.map(av=> api.post("rsc",av));
+        // alert("Processo cadastrados com sucesso");
+    }
 
     return(
-    
-    <div>
-            <div>
-                <div className={alterar} >
-                   
-                    <div className="forms-container">
-                        <div className="signin-signup">
-          
-                        <form action="#" className="sign-up-form" onSubmit={handleSubmit}>
-                            <h2 className="title">Cadastro de Processo RSC</h2>
+        <div id="page-create-rsc">
+            <header>
 
-                            <div className="input-field">
-                                <i className="fas fa-user"></i>
+            </header>
 
+            <img className="wave" src="../../assets/wave.png"/>
+	        <div className="container">
+		        <div className="img">
+			        <img src="img/bg.svg"/>
+		        </div>
+		        <div className="login-content">
+		
+                    <form onSubmit={handleSubmit}>
+                    
+                        <h2 className="title">Cadastrar Processo RSC</h2>
+
+                        <div>
+                            <div className="i">
                                 <input type="text" 
-                                placeholder="Numero de Processo" 
+                                placeholder="Numero do Processo" 
                                 name="numero_processo"
                                 id="numero_processo"
                                 onChange={handleInputChange}/>
                             </div>
 
-                            <div className="input-field">
-                                <i className="fas fa-address-card"></i>
-
+                            <div>
+                                <label>Documento RSC</label>
                                 <input type="file" 
                                 placeholder="Documento RSC" 
                                 name="documento_rsc"
@@ -74,28 +76,21 @@ const Rsc = () => {
                                 onChange={handleInputChange}/>
                             </div>
 
-                            <div className="input-field">
-                                <i className="fas fa-envelope"></i>
-
+                            <div>
                                 <input type="text" 
-                                placeholder="Id Professor" 
+                                placeholder="Id professor" 
                                 name="id_professor"
                                 id="id_professor"
                                 onChange={handleInputChange}/>
                             </div>
-
-                            
-                            <input type="submit" className="btn" value="Cadastrar" />
-           
-                            <p className="social-text">Usar redes sociais para realizar o cadastro?</p>
-            
-                            </form>
                         </div>
-                    </div> 
-                </div>   
-            </div>
-    </div>
-    )
+
+                        <input type="submit" className="btn" value="Cadrastar"/>
+                    </form>
+                </div>
+            </div>         
+        </div>
+    );
 }
 
-export default Rsc;
+export default CreatRsc;

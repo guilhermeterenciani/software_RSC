@@ -19,7 +19,7 @@ const Dashboard = () =>{
                         <li className="nav__item"><a href="#home" className="nav__link active">Menu</a></li>
                         <li className="nav__item"><a href="#skills" className="nav__link">Meus processos</a></li>
                         <li className="nav__item"><a href="#about" className="nav__link">Perfil</a></li>
-                        <li className="nav__item"><a href="#contact" className="nav__link">Cadastro RSC</a></li>
+                        <li className="nav__item"><a href="http://localhost:3000/create-rsc" className="nav__link">Cadastro RSC</a></li>
                     </ul>
                 </div>
 
