@@ -1,45 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.css';
-import {Redirect, withRouter} from 'react-router-dom';
-
+import {Redirect, useHistory, withRouter} from 'react-router-dom';
 //const Dashboard = () =>{
-class Dashboard extends React.Component {
-    state={
-        usuario: null
-    }
-    redirect=() =>{
-        return (
-            <Redirect to="/"/>
-        )
-    }
 
-    componentDidMount() {
-        //document.title = Você clicou ${this.state.count} vezes;
+interface UserPropsInterface{}
+interface StateInterface{
+    usuario?:{  id: string,
+                nome: string,
+                token: string}
+}
+const Dashboard = () =>{
+    const history = useHistory()
+    const [idUsuario, setIdUsuario] = useState("");
+    const [nomeUsuario, setNomeUsuario] = useState("");
+    // const [tokenUsuario, setTokenUsuario] = useState("");
+    const [logado, setLogado] = useState(false);
+
+    useEffect(() => {
         try{
             let string = localStorage.getItem('user')
             
             if(string){
-                let usuario = JSON.parse(string)
-                this.setState({usuario})
-                console.log(usuario);
+                var usuario = JSON.parse(string)
+                const {id,nome,token} = usuario;
+                setIdUsuario(id)
+                setNomeUsuario(nome)
+                // setTokenUsuario(token)
+                setLogado(true)
+                console.log(idUsuario)
             }
-            // else{
-            //     console.log("to aqui");
-            //     //const history = useHistory();
-            //     //this.history.push('/')
-            //     this.redirect();
-            //}
-
-            
         }catch(error){
+            setLogado(false)
             console.log(error.message)
         }
-    }
-    render(){
-        if(this.state.usuario){
-        return(
+    },[]);
+
+    if(logado){
+        return (
             <div>
-                    {/* Pagina  */}
                 <header className="l-header">
                     <nav className="nav bd-grid">
                         <div>
@@ -230,12 +228,11 @@ class Dashboard extends React.Component {
 
 
             </div>
-        )}
-        else{
-            return(
-                this.redirect()
-            )
-        }
+        )
+    }
+    else{
+        //{history.push('/')}
+        return(<div>Redirecionar</div>)
     }
 }
 export default Dashboard;
