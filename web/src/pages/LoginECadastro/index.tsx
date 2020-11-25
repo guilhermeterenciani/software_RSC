@@ -5,9 +5,11 @@ import register from '../../assets/register.svg';
 
 import api from '../../services/api';
 import LoginService from '../../services/LoginService';
+import {useHistory} from 'react-router-dom';
+const md5 = require('md5')
 
 const LoginECadastro = () => {
-
+    const history = useHistory();
     const [formData, setFormData] = useState({
         email: '',
         nome: '',
@@ -31,7 +33,7 @@ const LoginECadastro = () => {
 
             const { email, nome, senha, siape, cpf, celular} = formData;
 
-            const data = {
+            let data = {
                 email,
                 nome,
                 senha,
@@ -39,7 +41,10 @@ const LoginECadastro = () => {
                 cpf,
                 celular 
             };
-            
+
+            let criptSenha = md5(data.senha)
+            data.senha=criptSenha;
+
             console.log(data)
             await api.post('professor', data);
             alert("Professor cadastrado !");
@@ -66,16 +71,18 @@ const LoginECadastro = () => {
         //let data
         let data = await LoginService.logar(dataLogin);
         if(data.status){
-            throw new Error(data.message);
+            //TODO: throw new Error(data.message);
         }
         
-        if(!data.token){
-            throw new Error("Não foi possível realizar o login, tente mais tarde!");    
+        else if(!data.token){
+           //TODO: throw new Error("Não foi possível realizar o login, tente mais tarde!");    
         }
+        else{
+            localStorage.setItem('user', JSON.stringify(data));
+            api.defaults.headers['x-access-token'] = data.token
 
-        localStorage.setItem('user', JSON.stringify(data));
-        API.defaults.headers['x-access-token'] = data.token
-        return Promise.resolve();
+            history.push("/dashboard")
+        }
     }
 
 

@@ -1,18 +1,14 @@
 import Knex from 'knex';
 
 export async function seed(knek: Knex){
-    await knek('cadastroDeUsuario').insert([
+    await knek('professores').insert([
         { 
-            name: 'Guilherme',
-            sobrenome: 'Terenciani',
-            cpf: '0001112223',
-            dataDeNascimento: '02/02/1950',
-            genero: 'Masculino',
-            telefone: '40028922',
-            email: 'tere@edu.gov.br',
-            numero_do_processo: '00001',
-            senha: 'gui_tere000'
-
+            nome: 'Guilherme Terenciani',
+            email:'guilhermeterenciani@gmail.com',
+            senha: '2e3817293fc275dbee74bd71ce6eb056',
+            siape: '2350676',
+            cpf: '052.199.779-58',
+            celular: '67 996238979'
         },
     ]);
 }
