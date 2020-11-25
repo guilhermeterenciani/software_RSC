@@ -74,7 +74,7 @@ const LoginECadastro = () => {
         }
 
         localStorage.setItem('user', JSON.stringify(data));
-        api.defaults.headers['x-access-token'] = data.token
+        API.defaults.headers['x-access-token'] = data.token
         return Promise.resolve();
     }
 
@@ -95,7 +95,7 @@ const LoginECadastro = () => {
                             <h2 className="title">Seja Bem-Vindo</h2>
 
                             <div className="input-field">
-                                <i className="fas fa-chalkboard-teacher"></i>
+                                <i className="fas fa-user"></i>
                                 <input type="text" placeholder="SIAPE" name="siape" onChange={handleInputChange}/>
                             </div>
 
@@ -141,7 +141,7 @@ const LoginECadastro = () => {
                             </div>
 
                             <div className="input-field">
-                                <i className="fas fa-address-card"></i>
+                                <i className="fas fa-user"></i>
 
                                 <input type="number" 
                                 placeholder="CPF" 
@@ -161,22 +161,12 @@ const LoginECadastro = () => {
                             </div>
 
                             <div className="input-field">
-                                <i className="fas fa-chalkboard-teacher"></i>
+                                <i className="fas fa-envelope"></i>
 
                                 <input type="number" 
                                 placeholder="SIAPE" 
                                 name="siape"
                                 id="siape"
-                                onChange={handleInputChange}/>
-                            </div>
-
-                            <div className="input-field">
-                                <i className="fas fa-phone-alt"></i>
-
-                                <input type="number" 
-                                placeholder="Celular" 
-                                name="celular" 
-                                id= "celular"
                                 onChange={handleInputChange}/>
                             </div>
 
@@ -199,7 +189,17 @@ const LoginECadastro = () => {
                                 id= "confirmarsenha"
                                 onChange={handleInputChange}/>
                             </div>
-                           
+
+                            <div className="input-field">
+                                <i className="fas fa-lock"></i>
+
+                                <input type="number" 
+                                placeholder="Celular" 
+                                name="celular" 
+                                id= "celular"
+                                onChange={handleInputChange}/>
+                            </div>
+
                             <input type="submit" className="btn" value="Cadastrar" />
            
                             <p className="social-text">Usar redes sociais para realizar o cadastro?</p>
