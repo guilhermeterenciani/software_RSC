@@ -5,11 +5,11 @@ export async function up(knex: Knex) {
         table.increments('id').primary();
         table.string('numero_processo').notNullable();
         table.binary('documento_rsc').notNullable();
-        table.string('id_professor').notNullable();
+        table.integer('id_professor').notNullable();
         
     });
 }
 
 export async function down(knex: Knex) {
-    return knex.schema.dropSchema('Rsc');
+    return knex.schema.dropSchema('rsc');
 }
