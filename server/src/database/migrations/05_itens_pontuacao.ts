@@ -9,7 +9,7 @@ export async function up(knex: Knex) {
         table.float('peso').notNullable();
         table.string('normativa_de_comprovacao').notNullable();
 
-        table.foreign('subitem_rsc_idSubItem').references('idSubItem_rsc').inTable('subItem_rsc').notNullable();
+        table.integer('subitem_rsc_idSubItem').references('idSubItem_rsc').inTable('subItem_rsc').notNullable();
         
     });
 }

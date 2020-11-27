@@ -8,7 +8,11 @@ export async function up(knex: Knex) {
         table.float('minimo_com_peso').notNullable();
         table.float('pontuacao_maxima').notNullable();
 
-        table.foreign('nivel_rsc_idNivel').references('idNivel_rsc').inTable('nivel_rsc').notNullable();
+        table.integer('nivel_rsc_idNivel')
+        .notNullable()    
+        .references('idNivel_rsc')
+        .inTable('nivel_rsc')
+            
         
     });
 }
