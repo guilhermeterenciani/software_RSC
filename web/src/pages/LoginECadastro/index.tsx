@@ -8,7 +8,7 @@ import LoginService from '../../services/LoginService';
 import {useHistory} from 'react-router-dom';
 const md5 = require('md5')
 // Madeira
-//tere
+
 const LoginECadastro = () => {
     const history = useHistory();
     const [formData, setFormData] = useState({
