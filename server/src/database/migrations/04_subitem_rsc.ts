@@ -5,7 +5,7 @@ export async function up(knex: Knex) {
         table.increments('idSubItem_rsc').primary();
         table.string('nome').notNullable();
         table.float('pontuacao_sem_peso').notNullable();
-        table.float('minimo_com_peso').notNullable();
+        table.float('pontuacao_com_peso').notNullable();
         table.float('pontuacao_maxima').notNullable();
 
         table.integer('nivel_rsc_idNivel')
