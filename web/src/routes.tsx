@@ -6,6 +6,7 @@ import CreateRsc from './pages/createRsc';
 import CreateAvaliador from './pages/createAvaliador'; 
 import LoginECadastro from './pages/LoginECadastro'; 
 import Dashboard from './pages/Dashboard'; 
+import Processos_RSC from './pages/ProcessosRSC';
 //import CreateProfessor from './pages/createProfessor'; 
  
  
@@ -21,6 +22,8 @@ const Routes = () => {
                 <PrivateRoute component={CreateRsc} path="/create-rsc"/>
 
                 <PrivateRoute component={Dashboard} path="/dashboard"/> 
+
+                <PrivateRoute component={Processos_RSC} path="/cadastro-processos-rsc"/>
                 
             </Switch> 
         </BrowserRouter> 
