@@ -28,6 +28,7 @@ class SubItemRscController {
 
         const serializedSubItens = SubItens.map(SubItens =>{
             return{
+                id: SubItens.idSubItem_rsc,
                 nome: SubItens.nome,
                 pontuacao_sem_peso: SubItens.pontuacao_sem_peso,
                 pontuacao_com_peso: SubItens.pontuacao_com_peso,

@@ -9,6 +9,7 @@ import RscController from './controllers/RscController';
 import UserController from './controllers/UserController';
 import NivelRscController from './controllers/NivelRscController';
 import SubItemRscController from './controllers/SubItemRscController';
+import ItemPontuacao from './controllers/ItemPontuacaoController';
 
 const routs = express.Router();
 
@@ -17,6 +18,7 @@ const professorController = new ProfessorController();
 const rscController = new RscController();
 const nivelRscController = new NivelRscController();
 const subItmRscController = new SubItemRscController();
+const itemPontuacao = new ItemPontuacao();
 
 routs.post('/avaliador', avaliadorController.create)
 routs.get('/avaliador', avaliadorController.index) 
@@ -28,7 +30,10 @@ routs.post('/NivelRsc', nivelRscController.create)
 routs.get('/NivelRsc', nivelRscController.index)
 
 routs.post('/SubItemRsc', subItmRscController.create)
-routs.get('/SubItemRsc', subItmRscController.index) 
+routs.get('/SubItemRsc', subItmRscController.index)
+ 
+routs.post('/ItemPontuacao', itemPontuacao.create)
+routs.get('/ItemPontuacao', itemPontuacao.index) 
 
 routs.post('/professor', professorController.create)
 routs.get('/professor', professorController.index)
